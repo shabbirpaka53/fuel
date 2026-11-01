@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Global Fuel Analytics</title>
+
+  <!-- Fonts (Raleway for headings, Roboto for text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Link to the CSS file (same folder as this file) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== SIDE NAVIGATION ========== -->
+  <nav class="side-nav">
+    <a href="#home" class="nav-button active" title="Home">
+      <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg>
+    </a>
+    <a href="#about" class="nav-button" title="About">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
+    </a>
+    <a href="#dashboard" class="nav-button" title="Dashboard">
+      <svg viewBox="0 0 24 24"><rect x="3" y="15" width="4" height="4" rx="2"/><rect x="9" y="11" width="4" height="8" rx="2"/><rect x="15" y="5" width="4" height="14" rx="2"/></svg>
+    </a>
+    <a href="#story" class="nav-button" title="Story">
+      <svg viewBox="0 0 24 24"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3zM21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></svg>
+    </a>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <h1 class="hero-title">Global Fuel Analytics</h1>
+      <p class="hero-subtitle">Exploring <span class="underline">Market Data</span></p>
+      <div class="social-icons">
+        <a href="#" title="X">
+          <svg viewBox="0 0 24 24"><path d="M3 3l7.5 10L3 21h2l6.4-6.9L16.5 21H21l-8-10.7L20.2 3h-2l-5.9 6.4L7.5 3zm3.2 1.4h1.5l11.1 15.2h-1.5z"/></svg>
+        </a>
+        <a href="#" title="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-1.6 19.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 12 2z"/></svg>
+        </a>
+        <a href="#" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm2.5 6.5V18h2.7V9.5zm1.3-4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2zm3 4V18h2.7v-4.4c0-1.2.5-1.9 1.4-1.9s1.3.7 1.3 1.9V18h2.7v-5c0-2.2-1.200-3.700-3.100-3.700-1.100 0-1.800.5-2.200 1.100V9.500z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== ABOUT THE DATA ========== -->
+  <section class="section about" id="about">
+    <h2 class="section-title">About the Data</h2>
+    <div class="title-line"></div>
+    <p class="section-text">
+      This dataset encompasses global fuel prices and taxation trends spanning from 2020 to 2026, offering detailed insights into petrol, diesel, and LPG costs across different regions. It enables comparative evaluation of national fuel pricing policies and their correlation with tax structures worldwide.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3 class="card-title">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="17" rx="2"/><path d="M9 4V2h6v2M8 18v-4M12 18v-7M16 18v-3"/></svg>
+          Key Insights
+        </h3>
+        <p>Europe consistently demonstrates the highest average tax percentage (~34%) on fuels, significantly contributing to higher retail prices. Conversely, regions like the Middle East display the lowest taxation rates (~19%), subsidized heavily by local petroleum production.</p>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="11" height="18" rx="1"/><path d="M6 7h5v4H6M14 9h3a2 2 0 0 1 2 2v6a1.500 1.500 0 0 0 3 0V8l-3-3M2 21h13"/></svg>
+          Petrol vs. Diesel
+        </h3>
+        <p>Historically, diesel prices remained marginally lower than petrol globally. However, the data highlights converging price points post-2022, primarily driven by surging commercial demand and varying environmental taxation protocols.</p>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v9H3M12 12l6.500 6.500"/></svg>
+          Comparison Analysis
+        </h3>
+        <p>When comparing high-tax regions with minimal-tax nations, there is an inverse correlation between taxation levels and raw fuel price volatility. Advanced economies employ higher taxes as a buffer and a means of funding infrastructure, while producing nations maintain baseline costs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DATA INSIGHTS DASHBOARD ========== -->
+  <section class="section dashboard-section" id="dashboard">
+    <h2 class="section-title">Data Insights Dashboard</h2>
+    <div class="title-line"></div>
+    <p class="section-text">Interactive dashboard visualizing Average Prices and Taxation Performance Indicators.</p>
+
+    <div class="dashboard">
+
+      <!-- Top: title, KPIs and filters -->
+      <div class="dash-top">
+        <div class="dash-top-left">
+          <div class="dash-box dash-main-title">Global Fuel Prices and Taxation Trends (2020–2026)</div>
+          <div class="dash-box kpi-wrapper">
+            <div class="dash-heading">Global Fuel Price and Tax Performance Indicators</div>
+            <div class="kpi-row">
+              <div class="kpi"><div class="kpi-label">Avg. Diesel Usd Liter</div><div class="kpi-value">2.13$</div></div>
+              <div class="kpi"><div class="kpi-label">Avg. Lpg Usd Liter</div><div class="kpi-value">1.71$</div></div>
+              <div class="kpi"><div class="kpi-label">Avg. Petrol Usd Liter</div><div class="kpi-value">2.28$</div></div>
+              <div class="kpi"><div class="kpi-label">Avg. Tax Percentage</div><div class="kpi-value">26.77%</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-filters">
+          <div class="filter-box">
+            <span>Measure Names</span>
+            <div class="select">(Multiple values)</div>
+          </div>
+          <div class="filter-box">
+            <span>Country</span>
+            <div class="select">(All)</div>
+          </div>
+          <div class="filter-box">
+            <span>Action (YEAR(Date))</span>
+            <div class="select">(All)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main: maps, trend charts, pie and bars -->
+      <div class="dash-main">
+
+        <!-- Left column: maps -->
+        <div class="dash-col dash-col-left">
+          <div class="dash-box map-box">
+            <div class="dash-heading">Global Comparison of Average Petrol Prices (USD per Liter)</div>
+            <img src="images/map-petrol.png" alt="Map of average petrol prices">
+          </div>
+          <div class="dash-box map-box">
+            <div class="dash-heading">Global Comparison of Average Diesel Prices (USD per Liter)</div>
+            <img src="images/map-diesel.png" alt="Map of average diesel prices">
+          </div>
+        </div>
+
+        <!-- Middle column: line charts -->
+        <div class="dash-col dash-col-middle">
+          <div class="dash-box">
+            <div class="dash-heading">Global Trend of Average Petrol Prices (2020–2027)</div>
+            <img src="images/trend-petrol.png" alt="Petrol price trend chart">
+          </div>
+          <div class="dash-box">
+            <div class="dash-heading">Global Trend of Average Diesel Prices (2020–2027)</div>
+            <img src="images/trend-diesel.png" alt="Diesel price trend chart">
+          </div>
+          <div class="dash-box">
+            <div class="dash-heading">Global Trend of Average Lpg Prices (2020–2027)</div>
+            <img src="images/trend-lpg.png" alt="LPG price trend chart">
+          </div>
+          <div class="dash-box">
+            <div class="dash-heading">Global Trend of Average Brent Crude Oil Prices (2020–2027)</div>
+            <img src="images/trend-brent.png" alt="Brent crude oil price trend chart">
+          </div>
+        </div>
+
+        <!-- Right column: pie chart and bar chart -->
+        <div class="dash-col dash-col-right">
+          <div class="dash-box pie-box">
+            <div class="dash-heading">Average Tax Percentage by Global Region</div>
+            <div class="pie-area">
+              <div class="pie"></div>
+              <span class="pie-label l-south-america">South America<br>18.20%</span>
+              <span class="pie-label l-africa">Africa<br>25.79%</span>
+              <span class="pie-label l-oceania">Oceania<br>38.69%</span>
+              <span class="pie-label l-asia">Asia<br>23.01%</span>
+              <span class="pie-label l-north-america">North America<br>29.21%</span>
+              <span class="pie-label l-middle-east">Middle East<br>19.60%</span>
+            </div>
+          </div>
+
+          <div class="dash-box bar-box">
+            <div class="dash-heading">Highest Tax-Paying Nations: Comparative Analysis</div>
+            <div class="bars">
+              <div class="bar-item"><span>39.56%</span><div class="bar bar1"></div></div>
+              <div class="bar-item"><span>39.21%</span><div class="bar bar2"></div></div>
+              <div class="bar-item"><span></span><div class="bar bar3"></div></div>
+              <div class="bar-item"><span></span><div class="bar bar4"></div></div>
+              <div class="bar-item"><span>38.87%</span><div class="bar bar5"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GLOBAL FUEL PRICES STORY ========== -->
+  <section class="section story-section" id="story">
+    <h2 class="section-title">Global Fuel Prices Story</h2>
+    <div class="title-line"></div>
+    <p class="section-text">A step-by-step narrative exploring global trends.</p>
+
+    <div class="story">
+      <h3 class="story-title">Story 1</h3>
+
+      <div class="story-tabs">
+        <span class="arrow arrow-left">&#8249;</span>
+        <div class="tabs">
+          <div class="tab active">Global Fuel Price and Tax Performance Indicators</div>
+          <div class="tab">Global Comparison of Average Petrol Prices (USD per Liter)</div>
+          <div class="tab">Global Comparison of Average Diesel Prices (USD per Liter)</div>
+          <div class="tab">Global Trend of Average Petrol Prices (2020–2027)</div>
+        </div>
+        <span class="arrow arrow-right">&#8250;</span>
+      </div>
+
+      <div class="story-panel">
+        <div class="story-kpis">
+          <div class="story-kpi"><div class="story-kpi-label">Avg. Diesel Usd Liter</div><div class="story-kpi-value">2.13$</div></div>
+          <div class="story-kpi"><div class="story-kpi-label">Avg. Lpg Usd Liter</div><div class="story-kpi-value">1.71$</div></div>
+          <div class="story-kpi"><div class="story-kpi-label">Avg. Petrol Usd Liter</div><div class="story-kpi-value">2.28$</div></div>
+          <div class="story-kpi"><div class="story-kpi-label">Avg. Tax Percentage</div><div class="story-kpi-value">26.77%</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to top button -->
+  <a href="#home" class="to-top" title="Back to top">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
+
+</body>
+</html>

@@ -1,0 +1,684 @@
+/* =========================================
+   1. BASIC RESET AND VARIABLES
+   ========================================= */
+:root {
+  --blue: #0a5fb4;          /* active buttons, title underline */
+  --dark-text: #3f4a57;     /* headings */
+  --body-text: #222;        /* normal text */
+  --nav-gray: #e2e2e2;      /* inactive nav circles */
+  --dash-blue: #75cff0;     /* dashboard background */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  color: var(--body-text);
+  background: #fff;
+}
+
+svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* =========================================
+   2. SIDE NAVIGATION
+   ========================================= */
+.side-nav {
+  position: fixed;
+  left: 19px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100;
+}
+
+.nav-button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--nav-gray);
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.nav-button.active {
+  background: var(--blue);
+  color: #fff;
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /* Put your world map picture at images/world-map.jpg */
+  background: #ececec url("images/world-map.jpg") center / cover no-repeat;
+}
+
+.hero-content {
+  margin-left: 470px;
+  padding-top: 40px;
+}
+
+.hero-title {
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.1;
+  color: var(--dark-text);
+}
+
+.hero-subtitle {
+  font-size: 26px;
+  margin-top: 10px;
+  color: #222;
+}
+
+.underline {
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 2px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.social-icons a {
+  color: #444;
+  display: block;
+}
+
+.social-icons svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  stroke: none;
+}
+
+/* =========================================
+   4. COMMON SECTION STYLES
+   ========================================= */
+.section {
+  padding: 60px 20px 50px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--dark-text);
+}
+
+/* grey line with short blue part in the middle */
+.title-line {
+  width: 160px;
+  height: 1px;
+  background: #bbb;
+  margin: 24px auto 0;
+  position: relative;
+}
+
+.title-line::after {
+  content: "";
+  position: absolute;
+  left: 50px;
+  top: -1px;
+  width: 60px;
+  height: 3px;
+  background: var(--blue);
+}
+
+.section-text {
+  max-width: 1290px;
+  margin: 24px auto 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* =========================================
+   5. ABOUT SECTION
+   ========================================= */
+.about {
+  padding-bottom: 60px;
+}
+
+.cards {
+  max-width: 1300px;
+  margin: 60px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.card {
+  background: #fff;
+  padding: 24px;
+  min-height: 252px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--dark-text);
+  margin-bottom: 14px;
+}
+
+.card-title svg {
+  width: 24px;
+  height: 24px;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* =========================================
+   6. DASHBOARD
+   ========================================= */
+.dashboard-section {
+  background: #fff;
+  padding-top: 70px;
+}
+
+.dashboard {
+  max-width: 1296px;
+  margin: 60px auto 0;
+  background: var(--dash-blue);
+  padding: 12px;
+  text-align: center;
+}
+
+/* every box in the dashboard has a white border */
+.dash-box {
+  border: 2px solid #fff;
+  background: var(--dash-blue);
+}
+
+.dash-heading {
+  font-family: "Times New Roman", Georgia, serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  padding: 8px 10px;
+  color: #111;
+}
+
+/* ----- top part ----- */
+.dash-top {
+  display: flex;
+  gap: 8px;
+}
+
+.dash-top-left {
+  flex: 1;
+}
+
+.dash-main-title {
+  font-family: "Times New Roman", Georgia, serif;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 6px 10px;
+  margin-bottom: 8px;
+  height: 34px;
+  line-height: 20px;
+}
+
+.kpi-wrapper .dash-heading {
+  font-size: 19px;
+  padding-bottom: 4px;
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 2px 2px;
+  gap: 2px;
+}
+
+.kpi {
+  border: 1px solid #fff;
+}
+
+.kpi-label {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 2px 4px;
+  border-bottom: 1px solid #fff;
+}
+
+.kpi-value {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  padding: 10px 4px;
+}
+
+.dash-filters {
+  width: 135px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-box {
+  border: 2px solid #fff;
+  padding: 4px;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  height: 52px;
+}
+
+.select {
+  background: #fff;
+  border: 1px solid #777;
+  font-size: 11px;
+  padding: 1px 4px;
+  margin-top: 4px;
+  position: relative;
+}
+
+.select::after {
+  content: "\25BE";
+  position: absolute;
+  right: 4px;
+}
+
+/* ----- main grid: 3 columns ----- */
+.dash-main {
+  display: grid;
+  grid-template-columns: 490px 1fr 205px;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.dash-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.map-box {
+  flex: 1;
+}
+
+.map-box img {
+  width: 100%;
+  height: calc(100% - 70px);
+  min-height: 290px;
+  object-fit: cover;
+  background: #bfe6f5;
+}
+
+.dash-col-middle .dash-box {
+  flex: 1;
+}
+
+.dash-col-middle .dash-heading {
+  font-size: 19px;
+  padding: 8px 6px 2px;
+}
+
+.dash-col-middle img {
+  width: 100%;
+  height: auto;
+  min-height: 90px;
+}
+
+/* ----- pie chart (made with CSS only) ----- */
+.pie-box {
+  height: 376px;
+}
+
+.pie-area {
+  position: relative;
+  height: 290px;
+}
+
+.pie {
+  position: absolute;
+  left: 50%;
+  top: 82px;
+  width: 132px;
+  height: 132px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: conic-gradient(
+    #4e79a7 0 12%,
+    #f28e2b 12% 26%,
+    #e15759 26% 49%,
+    #76b7b2 49% 60%,
+    #59a14f 60% 78%,
+    #edc948 78% 92%,
+    #b07aa1 92% 100%
+  );
+}
+
+.pie-label {
+  position: absolute;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.l-south-america { left: 14px;  top: 22px; }
+.l-africa        { right: 10px; top: 28px; }
+.l-oceania       { left: 8px;   top: 66px; }
+.l-asia          { right: 6px;  top: 66px; }
+.l-north-america { left: 0;     top: 182px; }
+.l-middle-east   { right: 10px; top: 200px; }
+
+/* ----- bar chart (made with CSS only) ----- */
+.bar-box {
+  flex: 1;
+  min-height: 180px;
+  overflow: hidden;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 110px;
+  padding: 0 6px;
+}
+
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  width: 20%;
+}
+
+.bar {
+  width: 32px;
+  height: 80px;
+}
+
+.bar1 { background: #d9b2a0; }
+.bar2 { background: #4a9a96; }
+.bar3 { background: #4d4a7a; }
+.bar4 { background: #d9729a; }
+.bar5 { background: #d4a8d0; }
+
+/* =========================================
+   7. STORY SECTION
+   ========================================= */
+.story-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.story {
+  max-width: 1280px;
+  margin: 64px auto 0;
+  text-align: left;
+}
+
+.story-title {
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.story-tabs {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 44px;
+  color: #bbb;
+  width: 30px;
+  text-align: center;
+  line-height: 1;
+}
+
+.tabs {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  gap: 2px;
+  margin: 0 2px;
+}
+
+.tab {
+  flex: 0 0 338px;
+  height: 70px;
+  background: #ececec;
+  color: #888;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 11px 10px;
+  overflow: hidden;
+}
+
+.tab.active {
+  background: #d9d9d9;
+  color: #222;
+}
+
+.story-panel {
+  background: var(--dash-blue);
+  height: 640px;
+  margin-top: 11px;
+  padding: 9px;
+}
+
+.story-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  border: 2px solid #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.story-kpi {
+  border: 1px solid #fff;
+}
+
+.story-kpi-label {
+  font-weight: 700;
+  font-size: 14px;
+  border-bottom: 1px solid #fff;
+  padding: 1px 4px;
+}
+
+.story-kpi-value {
+  font-size: 15px;
+  padding: 1px 4px;
+}
+
+/* =========================================
+   8. BACK TO TOP BUTTON
+   ========================================= */
+.to-top {
+  position: fixed;
+  right: 38px;
+  bottom: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.to-top svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.4;
+}
+
+/* =========================================
+   9. RESPONSIVE: LAPTOP / TABLET
+   ========================================= */
+@media (max-width: 1100px) {
+  .hero-content {
+    margin-left: 140px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+  }
+
+  .card {
+    min-height: 0;
+  }
+
+  .dash-main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dash-col-right {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+
+  .dash-col-right .dash-box {
+    flex: 1;
+  }
+
+  .tab {
+    flex: 0 0 260px;
+  }
+}
+
+/* =========================================
+   10. RESPONSIVE: MOBILE
+   ========================================= */
+@media (max-width: 700px) {
+  /* navigation moves to the bottom of the screen */
+  .side-nav {
+    left: 50%;
+    top: auto;
+    bottom: 10px;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 6px;
+    border-radius: 40px;
+  }
+
+  .nav-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .to-top {
+    bottom: 76px;
+    right: 14px;
+  }
+
+  .hero-content {
+    margin-left: 24px;
+    margin-right: 16px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  .section {
+    padding: 40px 14px 70px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .dash-top {
+    flex-direction: column;
+  }
+
+  .dash-filters {
+    width: 100%;
+  }
+
+  .kpi-row,
+  .story-kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dash-main {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-col-right {
+    flex-direction: column;
+  }
+
+  .dash-main-title {
+    height: auto;
+    font-size: 18px;
+  }
+
+  .dash-heading {
+    font-size: 16px;
+  }
+
+  .tab {
+    flex: 0 0 200px;
+  }
+
+  .story-panel {
+    height: 380px;
+  }
+}
